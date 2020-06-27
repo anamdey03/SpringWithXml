@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean name="studentRepository" class="com.practice.SpringWithXml.Repository.CommerceStudents" />
+	
+	<!-- <bean name="repository" class="com.practice.SpringWithXml.Repository.CommerceStudents" /> -->  <!-- Autowire by Name -->
+	
+	<bean name="studentService" class="com.practice.SpringWithXml.Service.StudentService" autowire="byName"> <!-- We can do autowire byName, byType and constructor -->
+		<!-- <constructor-arg index="0" ref="studentRepository"/> --> <!-- Contructor Injection -->
+		<!-- <property name="studentRepository" ref="studentRepository"/> -->  <!-- Setter Injection -->
+	</bean>
+	
+</beans>
